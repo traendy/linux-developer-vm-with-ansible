@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   end
 
   # hostname
-  config.vm.hostname = 'dev-vm'
+  config.vm.hostname = 'dev-vm-android'
 
   # virtualbox specific customizations
   config.vm.provider "virtualbox" do |vbox, override|
