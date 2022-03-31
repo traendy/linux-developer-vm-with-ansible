@@ -22,3 +22,7 @@
     dest: "/usr/local/"
   become: yes
 
+# https://developer.android.com/studio/install#64bit-libs
+#- name: Execute stdio.sh
+#  ansible.buildin.shell: "/usr/local/"
+
