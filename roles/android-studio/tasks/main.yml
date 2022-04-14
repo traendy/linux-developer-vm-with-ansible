@@ -5,16 +5,16 @@
     dest: "{{ download_cache_dir }}/androidstudio.tar.gz"
     force: no
 
-- name: Install 64bit libraries
-  apt:
-    name: 
-      - libc6:i386
-      - libncurses5:i386
-      - libstdc++6:i386
-      - lib32z1
-      - libbz2-1.0:i386
-    state: present
-  become: yes
+#- name: Install 64bit libraries
+#  apt:
+#    name: 
+#      - libc6:i386
+#      - libncurses5:i386
+#      - libstdc++6:i386
+#      - lib32z1
+#      - libbz2-1.0:i386
+#    state: present
+#  become: yes
 
 - name: Unzip Android Studio
   unarchive:
@@ -22,7 +22,12 @@
     dest: "/usr/local/"
   become: yes
 
+# Does not work due to missing graphics.enviroment. it may not be possible this way.
 # https://developer.android.com/studio/install#64bit-libs
-#- name: Execute stdio.sh
-#  ansible.buildin.shell: "/usr/local/"
+- name: Execute stdio.sh
+  command: 
+    cmd: sh /usr/local/android-studio/bin/studio.sh
+  ignore_errors: yes
+# ToDO
+# Issue with adb wlan and usb
 

@@ -19,3 +19,4 @@
     - { role: vscode, tags: "vscode" }
     - { role: docker, tags: "docker" }
     - { role: android-studio, tags: "android-studio" }
+    - { role: firefox, tags: "firefox" }

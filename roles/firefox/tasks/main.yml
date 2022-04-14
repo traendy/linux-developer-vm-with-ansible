@@ -1,0 +1,7 @@
+- name: Install Firefox browser
+  apt:
+    name: 
+      - firefox
+      - firefox-locale-de 
+    state: present
+  become: yes
